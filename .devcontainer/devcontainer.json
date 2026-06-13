@@ -1,0 +1,35 @@
+{
+  "name": "Book Shelf Development with Claude Code",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+
+  // Claude Code Feature を使用してインストール
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+
+  // Claude Code設定を永続化するためのボリュームマウント
+  "mounts": [
+    "source=claude-code-config,target=/home/vscode/.claude,type=volume"
+  ],
+
+  // 環境変数（.envファイルから読み込み推奨）
+  "containerEnv": {
+    "DISABLE_AUTOUPDATER": "0"
+  },
+
+  // ポート転送（必要に応じて追加）
+  "forwardPorts": [8000],
+
+  // VS Code拡張機能（推奨）
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  }
+}
