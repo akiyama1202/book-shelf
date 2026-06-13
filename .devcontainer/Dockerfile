@@ -24,7 +24,9 @@ RUN ln -sf /usr/bin/python3 /usr/bin/python
 # Create developer user (vscode compatible)
 RUN useradd -ms /bin/bash vscode \
     && echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/vscode \
-    && chmod 0440 /etc/sudoers.d/vscode
+    && chmod 0440 /etc/sudoers.d/vscode \
+    && mkdir -p /home/vscode/.claude \
+    && chown -R vscode:vscode /home/vscode/.claude
 USER vscode
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh

@@ -20,6 +20,10 @@
     "DISABLE_AUTOUPDATER": "0"
   },
 
+  // ~/.claude.json (認証情報を含む) はボリューム外のファイルなので、
+  // ボリューム内に保存してシンボリックリンクすることでリビルド後も認証状態を維持する
+  "postCreateCommand": "if [ -f ~/.claude.json ] && [ ! -L ~/.claude.json ]; then mv ~/.claude.json ~/.claude/claude.json; fi; ln -sf ~/.claude/claude.json ~/.claude.json",
+
   // ポート転送（必要に応じて追加）
   "forwardPorts": [8000],
 
