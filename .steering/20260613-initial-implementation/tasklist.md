@@ -10,7 +10,7 @@
 - [x] `models/user.py`, `models/book.py`, `models/tag.py` 作成（USERS, BOOKS, TAGS, BOOK_TAGS）
 - [x] Alembic初期マイグレーション作成・適用
 - [x] `core/security.py` 作成（パスワードハッシュ、JWT発行・検証）
-- [ ] `schemas/auth.py`, `schemas/user.py` 作成
+- [x] `schemas/auth.py`, `schemas/user.py` 作成
 - [ ] `services/auth_service.py` 作成（ユーザー登録、認証）
 - [ ] `api/deps.py` 作成（`get_current_user` 依存関数）
 - [ ] `api/routes/auth.py` 作成（`POST /api/auth/register`, `POST /api/auth/login`）
