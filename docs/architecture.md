@@ -26,7 +26,7 @@
 | ORM | SQLAlchemy 2.0 | データベースアクセス |
 | マイグレーション | Alembic | スキーマ管理 |
 | バリデーション | Pydantic v2 | リクエスト/レスポンスのスキーマ定義 |
-| 認証 | JWT（python-jose） + passlib（パスワードハッシュ, bcrypt） | ログイン・トークン発行 |
+| 認証 | JWT（python-jose） + passlib（パスワードハッシュ, argon2） | ログイン・トークン発行 |
 | パッケージ管理 | uv | 依存パッケージ管理・実行 |
 | Lint/Format | Ruff | コード品質・整形 |
 | テスト | pytest + httpx | 単体・APIテスト |
