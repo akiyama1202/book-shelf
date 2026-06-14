@@ -33,13 +33,13 @@
 
 ### 3.1 プロジェクト初期化
 
-- [ ] `frontend/` プロジェクト作成（Vite + React + TypeScriptテンプレート）
-- [ ] 不要なボイラープレート（サンプルコード・アセット）の削除・整理
-- [ ] Tailwind CSS インストール・設定（`tailwind.config`, `postcss.config`, グローバルCSS）
-- [ ] ESLint セットアップ（プロジェクトのルールに合わせて設定）
-- [ ] Prettier セットアップ
-- [ ] Vitest + React Testing Library セットアップ
-- [ ] Vite開発サーバーのプロキシ設定（`/api` → バックエンド）
+- [x] `frontend/` プロジェクト作成（Vite + React + TypeScriptテンプレート）
+- [x] 不要なボイラープレート（サンプルコード・アセット）の削除・整理
+- [x] Tailwind CSS インストール・設定（`tailwind.config`, `postcss.config`, グローバルCSS）
+- [x] ESLint セットアップ（プロジェクトのルールに合わせて設定）
+- [x] Prettier セットアップ
+- [x] Vitest + React Testing Library セットアップ
+- [x] Vite開発サーバーのプロキシ設定（`/api` → バックエンド）
 
 ### 3.2 ルーティング・データ取得の土台
 

@@ -6,7 +6,8 @@
       "Bash(uv init *)",
       "Bash(uv add *)",
       "Bash(uv run *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Bash(npm run *)"
     ]
   }
 }
