@@ -16,8 +16,12 @@
   ],
 
   // 環境変数（.envファイルから読み込み推奨）
+  // HOME: Windows(WSL)環境ではvscodeユーザーのUIDがrootと衝突し、
+  // $HOMEが/rootに解決されてしまうため、明示的に/home/vscodeへ固定する
+  // （/home/vscode/.claude はボリュームマウントで永続化されている）
   "containerEnv": {
-    "DISABLE_AUTOUPDATER": "0"
+    "DISABLE_AUTOUPDATER": "0",
+    "HOME": "/home/vscode"
   },
 
   // ~/.claude.json (認証情報を含む) はボリューム外のファイルなので、
