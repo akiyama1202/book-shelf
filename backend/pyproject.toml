@@ -25,11 +25,25 @@ dev = [
     "ruff>=0.15.17",
 ]
 
+# ruff: 高速なPython用リンター/フォーマッター（flake8やisortなどを置き換える）
 [tool.ruff]
+# 1行あたりの最大文字数。これを超える行は警告対象になる。
 line-length = 100
 
 [tool.ruff.lint]
+# 有効にするルールセット（チェック項目のグループ）を指定する。
+#   E: pycodestyle（PEP8のコーディングスタイル）のエラー
+#   F: pyflakes（未使用の変数・import、構文ミスなど）
+#   I: isort（importの並び順・グループ化）
+#   UP: pyupgrade（古い書き方を新しいPython構文に置き換える提案。例: typingの古い書き方など）
+#   B: flake8-bugbear（バグになりやすい・分かりにくいコードパターンの検出）
 select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.flake8-bugbear]
+# flake8-bugbearには「関数のデフォルト引数にミュータブル(可変)な値や関数呼び出しを書くな」という
+# ルール(B008)があるが、FastAPIのDepends/Query/Path/Bodyはデフォルト引数として使うのが正しい使い方。
+# そのため、これらの呼び出しは「ミュータブルなデフォルト引数」の警告対象から除外する。
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.Path", "fastapi.Body"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

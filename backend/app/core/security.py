@@ -34,7 +34,7 @@ def create_access_token(subject: str, expires_delta: timedelta | None = None) ->
 
 def decode_access_token(token: str) -> dict[str, Any]:
     # リクエストで送られてきたJWTを検証・復号する。
-    # 署名が不正・期限切れなどの場合はJWTErrorが発生するので、ValueErrorに変換して呼び出し元に伝える。
+    # 署名が不正・期限切れなどの場合はJWTErrorが発生するので、ValueErrorに変換して伝える。
     try:
         return jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
     except JWTError as exc:

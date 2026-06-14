@@ -11,8 +11,8 @@
 - [x] Alembic初期マイグレーション作成・適用
 - [x] `core/security.py` 作成（パスワードハッシュ、JWT発行・検証）
 - [x] `schemas/auth.py`, `schemas/user.py` 作成
-- [ ] `services/auth_service.py` 作成（ユーザー登録、認証）
-- [ ] `api/deps.py` 作成（`get_current_user` 依存関数）
+- [x] `services/auth_service.py` 作成（ユーザー登録、認証）
+- [x] `api/deps.py` 作成（`get_current_user` 依存関数）
 - [ ] `api/routes/auth.py` 作成（`POST /api/auth/register`, `POST /api/auth/login`）
 - [ ] `tests/api/test_auth.py` 作成（登録・ログイン・不正なパスワード等）
 - [ ] `ruff check` / `ruff format --check` / `pytest` 実行・成功確認
