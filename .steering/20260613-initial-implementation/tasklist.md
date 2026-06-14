@@ -4,11 +4,11 @@
 
 ## フェーズ1: バックエンド基盤・認証
 
-- [ ] `backend/` プロジェクト初期化（uv, pyproject.toml, FastAPI, Uvicorn, SQLAlchemy, Alembic, Pydantic, Ruff, pytest）
-- [ ] `core/config.py` 作成（環境変数: DB接続情報, JWTシークレット等）、`.env.example` 作成
-- [ ] `db/base.py`, `db/session.py` 作成
-- [ ] `models/user.py`, `models/book.py`, `models/tag.py` 作成（USERS, BOOKS, TAGS, BOOK_TAGS）
-- [ ] Alembic初期マイグレーション作成・適用
+- [x] `backend/` プロジェクト初期化（uv, pyproject.toml, FastAPI, Uvicorn, SQLAlchemy, Alembic, Pydantic, Ruff, pytest）
+- [x] `core/config.py` 作成（環境変数: DB接続情報, JWTシークレット等）、`.env.example` 作成
+- [x] `db/base.py`, `db/session.py` 作成
+- [x] `models/user.py`, `models/book.py`, `models/tag.py` 作成（USERS, BOOKS, TAGS, BOOK_TAGS）
+- [x] Alembic初期マイグレーション作成・適用
 - [ ] `core/security.py` 作成（パスワードハッシュ、JWT発行・検証）
 - [ ] `schemas/auth.py`, `schemas/user.py` 作成
 - [ ] `services/auth_service.py` 作成（ユーザー登録、認証）
