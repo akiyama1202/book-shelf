@@ -31,32 +31,77 @@
 
 ## フェーズ3: フロントエンド基盤・認証画面
 
-- [ ] `frontend/` プロジェクト初期化（Vite + React + TypeScript）
-- [ ] Tailwind CSS セットアップ
-- [ ] ESLint, Prettier, Vitest, React Testing Library セットアップ
-- [ ] React Router セットアップ、`App.tsx` にルーティング定義
-- [ ] TanStack Query セットアップ
-- [ ] `api/client.ts` 作成（JWT付与、`/api`へのプロキシ設定）
-- [ ] `types/user.ts`, `api/authApi.ts` 作成
-- [ ] `hooks/useAuth.ts` 作成（ログイン状態管理、未ログイン時リダイレクト）
-- [ ] `components/layout/Header` 作成
+### 3.1 プロジェクト初期化
+
+- [ ] `frontend/` プロジェクト作成（Vite + React + TypeScriptテンプレート）
+- [ ] 不要なボイラープレート（サンプルコード・アセット）の削除・整理
+- [ ] Tailwind CSS インストール・設定（`tailwind.config`, `postcss.config`, グローバルCSS）
+- [ ] ESLint セットアップ（プロジェクトのルールに合わせて設定）
+- [ ] Prettier セットアップ
+- [ ] Vitest + React Testing Library セットアップ
+- [ ] Vite開発サーバーのプロキシ設定（`/api` → バックエンド）
+
+### 3.2 ルーティング・データ取得の土台
+
+- [ ] React Router インストール・最小限のルーティング定義（空のページでルートのみ確認）
+- [ ] TanStack Query インストール・`QueryClientProvider` 設定
+
+### 3.3 認証関連
+
+- [ ] `types/user.ts` 作成（ユーザー・トークンの型定義）
+- [ ] `api/client.ts` 作成（fetchラッパー、JWT付与）
+- [ ] `api/authApi.ts` 作成（登録・ログインAPI呼び出し）
+- [ ] `hooks/useAuth.ts` 作成（ログイン状態管理、トークン保存・読み込み）
+- [ ] 未ログイン時に `LoginPage` へリダイレクトするルートガードの実装
+
+### 3.4 画面
+
+- [ ] `components/layout/Header` 作成（ナビゲーション・ログアウト）
 - [ ] `pages/LoginPage` 作成
 - [ ] `pages/RegisterPage` 作成
+- [ ] `App.tsx` のルーティングを最終構成に更新（Header・ガードを組み込み）
+
+### 3.5 品質チェック
+
 - [ ] `npm run lint` / `npm run typecheck` / `npm run test` 実行・成功確認
 
 ## フェーズ4: フロントエンド 書籍・タグ画面
 
-- [ ] `types/book.ts`, `types/tag.ts`, `api/booksApi.ts`, `api/tagsApi.ts` 作成
-- [ ] `hooks/useBooks.ts`, `hooks/useTags.ts` 作成
-- [ ] `components/common/SearchBox`, `Pagination`, `SortableHeader` 作成
-- [ ] `components/book/StatusBadge`, `RatingStars`, `TagInput` 作成
-- [ ] `pages/BookListPage` 作成（一覧・検索・並び替え・ページネーション）
+### 4.1 型・APIクライアント
+
+- [ ] `types/book.ts`, `types/tag.ts` 作成
+- [ ] `api/booksApi.ts` 作成（CRUD・検索・並び替え・ページネーション）
+- [ ] `api/tagsApi.ts` 作成（CRUD）
+
+### 4.2 データ取得フック
+
+- [ ] `hooks/useBooks.ts` 作成（一覧取得・作成・更新・削除）
+- [ ] `hooks/useTags.ts` 作成（一覧取得・作成・更新・削除）
+
+### 4.3 共通コンポーネント
+
+- [ ] `components/common/SearchBox` 作成
+- [ ] `components/common/Pagination` 作成
+- [ ] `components/common/SortableHeader` 作成
+
+### 4.4 書籍関連コンポーネント
+
+- [ ] `components/book/StatusBadge` 作成
+- [ ] `components/book/RatingStars` 作成
+- [ ] `components/book/TagInput` 作成
+- [ ] `components/book/BookTable` 作成
 - [ ] `components/book/BookForm` 作成
+
+### 4.5 画面
+
+- [ ] `pages/BookListPage` 作成（一覧・検索・並び替え・ページネーションを統合）
 - [ ] `pages/BookCreatePage` 作成
 - [ ] `pages/BookEditPage` 作成
 - [ ] `pages/BookDetailPage` 作成
 - [ ] `pages/TagManagePage` 作成（一覧・登録・編集・削除）
-- [ ] `components/book/BookTable` 作成
+
+### 4.6 品質チェック
+
 - [ ] `npm run lint` / `npm run typecheck` / `npm run test` 実行・成功確認
 
 ## フェーズ5: 結合確認
