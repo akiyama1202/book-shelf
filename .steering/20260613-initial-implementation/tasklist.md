@@ -19,7 +19,7 @@
 
 ## フェーズ2: バックエンド 書籍・タグAPI
 
-- [ ] `schemas/book.py`, `schemas/tag.py` 作成
+- [x] `schemas/book.py`, `schemas/tag.py` 作成
 - [ ] `services/tag_service.py` 作成（一覧、登録、リネーム、削除）
 - [ ] `api/routes/tags.py` 作成（`GET/POST /api/tags`, `PUT/DELETE /api/tags/{id}`）
 - [ ] `services/book_service.py` 作成（CRUD、検索・並び替え・ページネーション、タグ紐付け）
