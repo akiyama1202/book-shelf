@@ -133,6 +133,7 @@ mkdir -p .steering/[YYYYMMDD]-initial-implementation
 #### 5. 実装開始
 
 `.steering/[YYYYMMDD]-initial-implementation/tasklist.md` に基づいて実装を進めます。
+進め方は「tasklist運用ルール」に従います。
 
 #### 6. 品質チェック
 
@@ -174,8 +175,22 @@ mkdir -p .steering/20250115-add-tag-feature
 #### 5. 実装開始
 
 `.steering/[YYYYMMDD]-[開発タイトル]/tasklist.md` に基づいて実装を進めます。
+進め方は「tasklist運用ルール」に従います。
 
 #### 6. 品質チェック
+
+## tasklist運用ルール
+
+`tasklist.md` のタスクは、**1タスクずつ**実装します。
+
+1. タスクリストの未着手（`[ ]`）のタスクを1つ選び、実装する
+2. 実装が完了したら、該当タスクを `[x]` にする
+3. ユーザーに完了を報告し、git commit を依頼する（git commit はユーザー自身が行う）
+4. 続けて次のタスクに進むか、ユーザーに確認する
+   - 「次のタスクも進めてOK」という指示があれば、次のタスクの実装に進む
+   - 指示がない場合は、次のタスクには進まず待機する
+
+複数タスクをまとめて実装しない。
 
 ## ドキュメント管理の原則
 
