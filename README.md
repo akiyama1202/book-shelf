@@ -2,6 +2,19 @@
 
 本棚管理アプリケーション
 
+## 📚 概要
+
+読んだ本・読みたい本を個人で記録・管理するための、シンプルな書籍管理システムです。
+
+- ユーザー登録・ログイン（JWT認証）
+- 書籍の登録・編集・削除・詳細表示
+- 書籍一覧（検索・並び替え・ページネーション）
+- 読書ステータス（読みたい / 未読 / 読書中 / 読了）、評価（1〜5）、タグ、メモの管理
+- タグの登録・編集・削除
+- 各ユーザーのデータは他ユーザーから分離（自分専用の本棚）
+
+技術スタックは `backend/`（FastAPI + SQLAlchemy + Alembic）と `frontend/`（React + Vite + TypeScript、実装予定）。詳細は `docs/` 配下の設計ドキュメントを参照してください。
+
 ## 🚀 Claude Code開発環境のセットアップ
 
 このプロジェクトはDockerコンテナ内でClaude Codeを使用して開発できます。
@@ -14,21 +27,7 @@
 
 ### セットアップ手順
 
-1. **環境変数の設定**
-
-   `.env.example`をコピーして`.env`ファイルを作成します：
-   ```bash
-   cp .env.example .env
-   ```
-
-   `.env`ファイルを編集し、Anthropic API Keyを設定します：
-   ```
-   ANTHROPIC_API_KEY=your_actual_api_key_here
-   ```
-
-   APIキーは[Anthropic Console](https://console.anthropic.com/settings/keys)から取得できます。
-
-2. **Dev Containerで開く**
+1. **Dev Containerで開く**
 
    VS Codeでこのプロジェクトを開き、コマンドパレット（`Cmd+Shift+P` / `Ctrl+Shift+P`）から：
    ```
@@ -36,7 +35,7 @@
    ```
    を選択します。
 
-3. **Claude Codeの起動**
+2. **Claude Codeの起動**
 
    コンテナ内のターミナルで：
    ```bash
@@ -55,3 +54,30 @@
 
 - コンテナのリビルドが必要な場合：`Dev Containers: Rebuild Container`
 - Claude Codeの認証情報はコンテナ内の`~/.claude/`に保存されます
+
+## バックエンド（`backend/`）
+
+FastAPI + SQLAlchemy + Alembic構成。パッケージ管理は[uv](https://docs.astral.sh/uv/)を使用します。
+
+### セットアップ
+
+```bash
+cd backend
+uv sync
+cp .env.example .env
+uv run alembic upgrade head
+```
+
+### 開発サーバー起動
+
+```bash
+uv run uvicorn app.main:app --reload
+```
+
+### リント・フォーマット・テスト
+
+```bash
+uv run ruff check
+uv run ruff format --check
+uv run pytest
+```
