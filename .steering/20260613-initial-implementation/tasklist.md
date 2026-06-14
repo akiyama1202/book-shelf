@@ -24,10 +24,10 @@
 - [x] `api/routes/tags.py` 作成（`GET/POST /api/tags`, `PUT/DELETE /api/tags/{id}`）
 - [x] `services/book_service.py` 作成（CRUD、検索・並び替え・ページネーション、タグ紐付け）
 - [x] `api/routes/books.py` 作成（`GET/POST /api/books`, `GET/PUT/DELETE /api/books/{id}`）
-- [ ] 認可チェック（他ユーザーのデータへのアクセスは404）の実装
-- [ ] `tests/api/test_tags.py` 作成（CRUD、重複エラー、認可）
-- [ ] `tests/api/test_books.py` 作成（CRUD、検索、並び替え、ページネーション、認可）
-- [ ] `ruff check` / `ruff format --check` / `pytest` 実行・成功確認
+- [x] 認可チェック（他ユーザーのデータへのアクセスは404）の実装
+- [x] `tests/api/test_tags.py` 作成（CRUD、重複エラー、認可）
+- [x] `tests/api/test_books.py` 作成（CRUD、検索、並び替え、ページネーション、認可）
+- [x] `ruff check` / `ruff format --check` / `pytest` 実行・成功確認
 
 ## フェーズ3: フロントエンド基盤・認証画面
 
