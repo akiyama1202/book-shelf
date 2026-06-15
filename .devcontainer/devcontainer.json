@@ -30,7 +30,7 @@
   "postCreateCommand": "if [ -f ~/.claude.json ] && [ ! -L ~/.claude.json ]; then mv ~/.claude.json ~/.claude/claude.json; fi; ln -sf ~/.claude/claude.json ~/.claude.json; cd /workspaces/book-shelf/backend && uv sync",
 
   // コンテナ起動時（再起動含む）に依存パッケージを最新化する
-  "postStartCommand": "cd /workspaces/book-shelf/backend && uv sync",
+  "postStartCommand": "cd /workspaces/book-shelf/backend && uv sync && cd /workspaces/book-shelf/frontend && npm install",
 
   // ポート転送（必要に応じて追加）
   "forwardPorts": [8000],
