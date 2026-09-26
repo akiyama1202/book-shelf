@@ -48,11 +48,11 @@
 
 ### 3.3 認証関連
 
-- [ ] `types/user.ts` 作成（ユーザー・トークンの型定義）
-- [ ] `api/client.ts` 作成（fetchラッパー、JWT付与）
-- [ ] `api/authApi.ts` 作成（登録・ログインAPI呼び出し）
-- [ ] `hooks/useAuth.ts` 作成（ログイン状態管理、トークン保存・読み込み）
-- [ ] 未ログイン時に `LoginPage` へリダイレクトするルートガードの実装
+- [x] `types/user.ts` 作成（ユーザー・トークンの型定義）
+- [x] `api/client.ts` 作成（fetchラッパー、JWT付与）
+- [x] `api/authApi.ts` 作成（登録・ログインAPI呼び出し）
+- [x] `hooks/useAuth.ts` 作成（ログイン状態管理、トークン保存・読み込み）
+- [x] 未ログイン時に `LoginPage` へリダイレクトするルートガードの実装
 
 ### 3.4 画面
 
