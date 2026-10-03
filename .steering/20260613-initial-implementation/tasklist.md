@@ -56,10 +56,10 @@
 
 ### 3.4 画面
 
-- [ ] `components/layout/Header` 作成（ナビゲーション・ログアウト）
-- [ ] `pages/LoginPage` 作成
-- [ ] `pages/RegisterPage` 作成
-- [ ] `App.tsx` のルーティングを最終構成に更新（Header・ガードを組み込み）
+- [x] `components/layout/Header` 作成（ナビゲーション・ログアウト）
+- [x] `pages/LoginPage` 作成
+- [x] `pages/RegisterPage` 作成
+- [x] `App.tsx` のルーティングを最終構成に更新（Header・ガードを組み込み）
 
 ### 3.5 品質チェック
 
