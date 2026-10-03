@@ -1,19 +1,14 @@
 {
   "name": "Book Shelf Development with Claude Code",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/book-shelf",
   "remoteUser": "vscode",
 
   // Claude Code Feature を使用してインストール
   "features": {
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
-
-  // Claude Code設定を永続化するためのボリュームマウント
-  "mounts": [
-    "source=claude-code-config,target=/home/vscode/.claude,type=volume"
-  ],
 
   // 環境変数（.envファイルから読み込み推奨）
   // HOME: Windows(WSL)環境ではvscodeユーザーのUIDがrootと衝突し、
@@ -32,8 +27,8 @@
   // コンテナ起動時（再起動含む）に依存パッケージを最新化する
   "postStartCommand": "cd /workspaces/book-shelf/backend && uv sync && cd /workspaces/book-shelf/frontend && npm install",
 
-  // ポート転送（必要に応じて追加）
-  "forwardPorts": [8000],
+  // ポート転送
+  "forwardPorts": [8000, 5173],
 
   // VS Code拡張機能（推奨）
   "customizations": {
