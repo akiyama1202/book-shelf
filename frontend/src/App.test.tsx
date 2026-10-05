@@ -5,6 +5,7 @@ import App from './App'
 
 describe('App', () => {
   it('「/」にアクセスすると書籍一覧画面が表示される', () => {
+    localStorage.setItem('accessToken', 'mock-token')
     render(<App />, { wrapper: MemoryRouter })
 
     expect(screen.getByRole('heading', { name: '書籍一覧' })).toBeInTheDocument()

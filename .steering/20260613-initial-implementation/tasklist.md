@@ -63,7 +63,7 @@
 
 ### 3.5 品質チェック
 
-- [ ] `npm run lint` / `npm run typecheck` / `npm run test` 実行・成功確認
+- [x] `npm run lint` / `npm run typecheck` / `npm run test` 実行・成功確認
 
 ## フェーズ4: フロントエンド 書籍・タグ画面
 
