@@ -69,9 +69,9 @@
 
 ### 4.1 型・APIクライアント
 
-- [ ] `types/book.ts`, `types/tag.ts` 作成
-- [ ] `api/booksApi.ts` 作成（CRUD・検索・並び替え・ページネーション）
-- [ ] `api/tagsApi.ts` 作成（CRUD）
+- [x] `types/book.ts`, `types/tag.ts` 作成
+- [x] `api/booksApi.ts` 作成（CRUD・検索・並び替え・ページネーション）
+- [x] `api/tagsApi.ts` 作成（CRUD）
 
 ### 4.2 データ取得フック
 
