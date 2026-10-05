@@ -19,6 +19,7 @@ jobs:
     container: amazonlinux:2023
     steps:
       - name: Install system dependencies
+        working-directory: .
         run: dnf install -y git tar gzip
 
       - uses: actions/checkout@v4
@@ -58,6 +59,7 @@ jobs:
       TEST_DATABASE_URL: mysql+pymysql://book_shelf:book_shelf@mysql:3306/book_shelf_test
     steps:
       - name: Install system dependencies
+        working-directory: .
         run: dnf install -y git tar gzip
 
       - uses: actions/checkout@v4
