@@ -5,17 +5,12 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from app.core.config import settings
 
-# SQLiteはデフォルトで「接続を作ったスレッドからしか使えない」という制約がある。
-# FastAPIはリクエストごとに別スレッドで処理することがあるため、
-# SQLiteの場合だけこの制約を緩める設定を追加する（他のDBでは不要なので空の辞書）。
-connect_args = {"check_same_thread": False} if settings.database_url.startswith("sqlite") else {}
-
 # --- Engine ---
 # EngineはDB全体への「接続口」そのもの。
-# settings.database_url（例: "sqlite:///./book_shelf.db"）を見て、
-# どのDB(SQLite/PostgreSQLなど)にどう繋ぐかを管理するオブジェクト。
+# settings.database_url（例: "mysql+pymysql://user:pass@host:3306/dbname"）を見て、
+# DBにどう繋ぐかを管理するオブジェクト。
 # アプリ起動時に1つだけ作成し、アプリ全体で共有する（リクエストごとに作り直さない）。
-engine = create_engine(settings.database_url, connect_args=connect_args)
+engine = create_engine(settings.database_url)
 
 # --- SessionLocal ---
 # SessionはDBとの「1回のやりとり単位」（会話のようなもの）。

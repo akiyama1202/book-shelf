@@ -34,9 +34,11 @@
 ### 1.3 データベース
 | 項目 | 採用技術 | 説明 |
 |---|---|---|
-| DB | SQLite | 個人利用規模のため軽量なファイルDBを採用 |
+| DB | MySQL 8.0 | 本番運用を見据え、スケーラビリティと運用実績のあるRDBMSを採用 |
+| DBドライバ | PyMySQL | SQLAlchemy経由でのMySQL接続 |
 
-- 将来的にPostgreSQL等への移行が必要になった場合も、SQLAlchemy + Alembicによる抽象化により切り替えコストを抑える
+- 開発環境ではDocker Compose（`.devcontainer/docker-compose.yml`）にMySQLサービスを追加し、環境差異を排除する
+- テスト（pytest）も本番と同一のMySQLに統一し、方言差異によるバグを防ぐ
 
 ## 2. 開発ツールと手法
 
