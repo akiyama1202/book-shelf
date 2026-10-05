@@ -78,6 +78,10 @@ export async function apiClient<T>(
     );
   }
 
+  if (response.status === 204) {
+    return undefined as T;
+  }
+
   const json: unknown = await response.json();
   return convertKeysToCamelCase(json) as T;
 }
