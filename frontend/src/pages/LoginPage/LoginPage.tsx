@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { z } from 'zod'
+import { ApiError } from '../../api/client'
 import { useAuth } from '../../contexts/AuthContext'
 
 const loginSchema = z.object({
@@ -44,8 +45,12 @@ function LoginPage() {
     try {
       await login(result.data)
       navigate('/')
-    } catch {
-      setServerError('メールアドレスまたはパスワードが正しくありません')
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        setServerError('メールアドレスまたはパスワードが正しくありません')
+      } else {
+        setServerError('ログインに失敗しました。時間をおいて再度お試しください。')
+      }
     } finally {
       setIsSubmitting(false)
     }

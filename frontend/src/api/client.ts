@@ -1,6 +1,16 @@
 const BASE_URL = "/api";
 export const TOKEN_STORAGE_KEY = "accessToken";
 
+export class ApiError extends Error {
+  status: number;
+
+  constructor(status: number, message: string) {
+    super(message);
+    this.name = "ApiError";
+    this.status = status;
+  }
+}
+
 // バックエンドAPIはsnake_caseでJSONを返すため、フロントエンドのcamelCase型定義に合わせて変換する
 function snakeToCamel(str: string): string {
   return str.replace(/_([a-z])/g, (_, char: string) => char.toUpperCase());
@@ -62,7 +72,8 @@ export async function apiClient<T>(
 
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(
+    throw new ApiError(
+      response.status,
       `API error: ${response.status} ${response.statusText} - ${errorText}`,
     );
   }

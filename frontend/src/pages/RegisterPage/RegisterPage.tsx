@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { z } from 'zod'
+import { ApiError } from '../../api/client'
 import { useAuth } from '../../contexts/AuthContext'
 
 const registerSchema = z.object({
@@ -44,8 +45,12 @@ function RegisterPage() {
     try {
       await register(result.data)
       navigate('/')
-    } catch {
-      setServerError('登録に失敗しました。このメールアドレスは既に使用されています。')
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 409) {
+        setServerError('このメールアドレスは既に使用されています。')
+      } else {
+        setServerError('登録に失敗しました。時間をおいて再度お試しください。')
+      }
     } finally {
       setIsSubmitting(false)
     }

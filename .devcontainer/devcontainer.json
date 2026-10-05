@@ -28,7 +28,7 @@
   "postStartCommand": "cd /workspaces/book-shelf/backend && uv sync && cd /workspaces/book-shelf/frontend && npm install",
 
   // ポート転送
-  "forwardPorts": [8000, 5173],
+  "forwardPorts": [8000, 5173, 3306],
 
   // VS Code拡張機能（推奨）
   "customizations": {
