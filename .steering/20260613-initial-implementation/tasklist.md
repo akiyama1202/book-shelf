@@ -80,9 +80,9 @@
 
 ### 4.3 共通コンポーネント
 
-- [ ] `components/common/SearchBox` 作成
-- [ ] `components/common/Pagination` 作成
-- [ ] `components/common/SortableHeader` 作成
+- [x] `components/common/SearchBox` 作成
+- [x] `components/common/Pagination` 作成
+- [x] `components/common/SortableHeader` 作成
 
 ### 4.4 書籍関連コンポーネント
 
